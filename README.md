@@ -1,7 +1,5 @@
 # line story internet shope
 
-Internet shop Line Story
-
 Home page
 
 ![Screenshot from 2022-03-27 15-29-37](https://user-images.githubusercontent.com/67123448/160281529-de24d3be-1fd9-4536-81ee-d1f46afd9bdc.png)
