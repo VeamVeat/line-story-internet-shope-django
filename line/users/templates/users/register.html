@@ -1,13 +1,31 @@
 {% extends 'users/base.html' %}
+{% load static %}
 
-{% block content %}l
-<h2>Register</h2>
+{% block link-style %}
+  <link href="{% static 'css/register.css' %}" rel="stylesheet">
+{% endblock %}
 
-<form method="post">
-   {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Register">
-</form>
 
-<a href="{% url 'login' %}">Back to login</a>
+{% block content %}
+<div class="page-content-register">
+  <div class="register-container">
+    <header class="section-header">
+    <h1 class="section-header__title">REGISTRATION</h1>
+    </header>
+    <div class="login-content">
+      <form action="{% url 'register' %}"  id="customer-register" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+          <p class="register-item label-register">{{ field.label }}</p>
+          {{ field }}
+        {% endfor %}
+        <div class="register-item register-form-btn">
+          <button type="submit" class="register-btn">REGISTER</button>
+        </div>
+
+        <a class="register-item login" href="{% url 'login' %}">log in</a>
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock %}
